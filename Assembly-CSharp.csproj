@@ -65,7 +65,6 @@
     <Compile Include="Assets\Scripts\Core\MemorySystem.cs" />
     <Compile Include="Assets\Scripts\Core\Movement.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <None Include="Assets\MouseKnight\SRP\New Text Document.txt" />
     <Reference Include="Cinemachine">
       <HintPath>C:/Users/pablo/Documents/GitHub/RPG_GAME/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>

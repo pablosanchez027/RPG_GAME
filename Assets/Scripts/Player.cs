@@ -17,9 +17,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Movement3D.DeltaMovement(transform, moveSpeed);
-        anim.SetFloat("move", Movement3D.AxisDelta.magnitude);
+        anim.SetFloat("move", Mathf.Abs(Movement3D.Axis.magnitude));
 
-        Movement3D.DeltaRotate(transform);
+        Movement3D.MoveFacing(transform, moveSpeed);
     }
 }

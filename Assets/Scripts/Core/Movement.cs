@@ -129,11 +129,13 @@ namespace Core.Movement
                 t.position = t.position + (AxisDelta * speed);
             }
 
-            public static void DeltaRotate(Transform t)
+            public static void MoveFacing(Transform t,float speed)
             {
-                Vector3 relativePos = AxisDelta; ;
-                Quaternion rotation = Quaternion.LookRotation(relativePos);
-                t.rotation = rotation;
+                t.Translate(Vector3.forward * AxisDelta.magnitude * speed);
+                if (Axis != Vector3.zero)
+                {
+                    t.rotation = Quaternion.LookRotation(Axis);
+                }    
             }
         }
     }

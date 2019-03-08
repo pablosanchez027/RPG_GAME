@@ -3,22 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Core.Movement.Sys3D;
 
-public class Player : MonoBehaviour
+public class Player : NPC
 {
-    [SerializeField, Range(0f, 10f)]
-    float moveSpeed = 0f;
-
-    Animator anim;
-
-    private void Start()
+    private void Awake()
     {
         anim = GetComponent<Animator>();
     }
 
-    void Update()
+    new void Update()
     {
-        anim.SetFloat("move", Mathf.Abs(Movement3D.Axis.magnitude));
-
-        Movement3D.MoveFacing(transform, moveSpeed);
+        base.Update();
     }
 }

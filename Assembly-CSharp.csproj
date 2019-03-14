@@ -65,7 +65,9 @@
     <Compile Include="Assets\Scripts\Core\MemorySystem.cs" />
     <Compile Include="Assets\Scripts\Core\Movement.cs" />
     <Compile Include="Assets\Scripts\Follower.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\NPC.cs" />
+    <Compile Include="Assets\Scripts\PartySystem.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\XInputDotNet\Examples\XInputTestCS.cs" />
     <None Include="Assets\XInputDotNet\Docs.txt" />

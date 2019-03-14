@@ -9,7 +9,6 @@ public class Follower : MonoBehaviour
 {
     [SerializeField] Transform targetFollower;
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] Player player;
 
     [SerializeField] CinemachineVirtualCamera Follow;
 
@@ -26,8 +25,6 @@ public class Follower : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             agent.enabled = !agent.enabled;
-
-            player.enabled = !agent.enabled;
 
             Follow.enabled = !Follow.enabled;
         }

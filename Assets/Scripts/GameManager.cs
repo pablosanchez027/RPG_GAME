@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-
+            partySystem.ChangeLeader();
         }
     }
 }

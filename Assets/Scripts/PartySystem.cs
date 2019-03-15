@@ -30,6 +30,20 @@ namespace Core.PartySystem
             characters.RemoveAt(0);
             characters.Add(lastLeader);
             InitLeader();
+           
+            lastLeader.CameraFollow1.enabled = false;
+
+            for (int i=0;i<characters.Count;i++)
+            {
+                if(i>0)
+                {
+                    characters[i].TargetFollower = characters[i - 1].transform;
+                    characters[i].Agent.enabled = true;
+                }
+            }
+
+            characters[0].Agent.enabled = false;
+            characters[0].CameraFollow1.enabled = true;
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Core.Movement.Sys3D;
 using UnityEngine.AI;
+using Cinemachine;
 
 public class NPC : MonoBehaviour
 {
@@ -19,8 +20,16 @@ public class NPC : MonoBehaviour
     [SerializeField] Transform targetFollower;
     [SerializeField] NavMeshAgent agent;
 
+    [SerializeField] CinemachineVirtualCamera CameraFollow;
+
     public bool IsLeader { get => isLeader;
         set => isLeader = value; }
+    public Transform TargetFollower { get => targetFollower;
+        set => targetFollower = value; }
+    public CinemachineVirtualCamera CameraFollow1 { get => CameraFollow;
+        set => CameraFollow = value; }
+    public NavMeshAgent Agent { get => agent;
+        set => agent = value; }
 
     void Start()
     {
@@ -65,12 +74,13 @@ public class NPC : MonoBehaviour
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
-                if (!agent.hasPath || agent.velocity.magnitude == 0f)
+                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                 {
                     anim.SetFloat("move", 1);
                 }
             }
         }
+
         else
         {
             anim.SetFloat("move", 0);
